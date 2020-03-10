@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // App components
 import Home from './Home';
@@ -11,7 +11,7 @@ import NotFound from './NotFound';
 import Featured from './Featured';
 
 const App = () => (
-  <HashRouter>
+  <BrowserRouter basename="/course-directory">
     <div className="container">
       <Header />
       {/* switch will look only for a matching routes. If it doe snot find a route that matches it fall back to "catch all routes" component NotFound  */}
@@ -24,7 +24,7 @@ const App = () => (
       <Route component={NotFound} />
       </Switch>
     </div>
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default App;
